@@ -8,6 +8,13 @@ import {
 } from "lucide-react";
 import "./App.css";
 
+const imagePath = (filename: string) =>
+  `${import.meta.env.BASE_URL}images/${filename}`;
+
+const coffeeBackgroundStyle = {
+  "--coffee-background": `url("${imagePath("costa_coffee.png")}")`,
+} as React.CSSProperties;
+
 const drinks = [
 {
   number: "01",
@@ -16,7 +23,7 @@ const drinks = [
   price: "€3.80",
   category: "CLASSIC",
   type: "CLASSIC",
-  image: "/images/flat-white.jpg",
+  image: imagePath("flat-white.jpg"),
 },
   {
     number: "02",
@@ -25,7 +32,7 @@ const drinks = [
     price: "€3.60",
     category: "CLASSIC",
     type: "CLASSIC",
-    image: "/images/cappuccino.jpg",
+    image: imagePath("cappuccino.jpg")
 
   },
   {
@@ -35,7 +42,7 @@ const drinks = [
     price: "€4.50",
     category: "SIGNATURE",
     type: "SIGNATURE",
-    image: "/images/caramel-latte.jpg",
+    image: imagePath("caramel-latte.jpg"),
 
   },
   {
@@ -45,7 +52,7 @@ const drinks = [
     price: "€4.40",
     category: "SIGNATURE",
     type: "SIGNATURE",
-    image: "/images/mocha.jpg",
+    image: imagePath("mocha.jpg"),
 
   },
   {
@@ -55,7 +62,7 @@ const drinks = [
     price: "€4.20",
     category: "ICED",
     type: "ICED",
-    image: "/images/iced-latte.jpg",
+    image: imagePath("iced-latte.jpg"),
 
   },
   {
@@ -65,7 +72,7 @@ const drinks = [
     price: "€3.50",
     category: "ICED",
     type: "ICED",
-    image: "/images/iced-americano.jpg",
+    image: imagePath("iced-americano.jpg"),
 
   },
 ];
@@ -243,7 +250,11 @@ useEffect(() => {
 
      
 
-<section className="coffee-section" id="coffee">
+<section
+  className="coffee-section"
+  id="coffee"
+  style={coffeeBackgroundStyle}
+>
 
   <div className="section-label">
     01 / OUR PHILOSOPHY
@@ -500,7 +511,7 @@ useEffect(() => {
     {/* MAIN IMAGE */}
     <div className="story-main-image">
       <img
-        src="/images/story-atmosphere.jpg"
+        src={imagePath("story-atmosphere.jpg")}
         alt="Warm coffee shop atmosphere"
       />
 
@@ -527,7 +538,7 @@ useEffect(() => {
     {/* BOTTOM PHOTO COLLAGE */}
     <div className="story-photo story-photo-one">
       <img
-        src="/images/story-espresso.jpg"
+        src={imagePath("story-espresso.jpg")}
         alt="Freshly prepared espresso"
       />
       <span>Morning rituals.</span>
@@ -535,7 +546,7 @@ useEffect(() => {
 
     <div className="story-photo story-photo-two">
       <img
-        src="/images/story-coffee.jpg"
+        src={imagePath("story-coffee.jpg")}
         alt="Coffee served in a cafe"
       />
       <span>A moment to enjoy.</span>
@@ -543,7 +554,7 @@ useEffect(() => {
 
     <div className="story-photo story-photo-three">
       <img
-        src="/images/story-people.jpg"
+        src={imagePath("story-people.jpg")}
         alt="People enjoying coffee together"
       />
       <span>Made for sharing.</span>
