@@ -9,7 +9,7 @@ import {
 import "./App.css";
 
 const imagePath = (filename: string) =>
-  `${import.meta.env.BASE_URL}images/${filename}`;
+  `${import.meta.env.PROD ? "/Costa_Coffee/" : "/"}images/${filename}`;
 
 const coffeeBackgroundStyle = {
   "--coffee-background": `url("${imagePath("costa_coffee.png")}")`,
